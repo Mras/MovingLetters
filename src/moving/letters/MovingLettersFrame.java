@@ -11,10 +11,8 @@ import javax.swing.JTextField;
 
 import org.apache.log4j.Logger;
 
-import entry.point.Main;
-
 public class MovingLettersFrame extends JFrame {
-	private static final Logger LOG = Logger.getLogger(Main.class);
+	private static final Logger LOG = Logger.getLogger(MovingLettersFrame.class);
 	private JButton leftButton;
 	private JButton rightButton;
 	private JPanel buttonPanel;
