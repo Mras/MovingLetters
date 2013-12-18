@@ -3,14 +3,18 @@ package moving.letters;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.Action;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import org.apache.log4j.Logger;
+
+import entry.point.Main;
+
 public class MovingLettersFrame extends JFrame {
+	private static final Logger LOG = Logger.getLogger(Main.class);
 	private JButton leftButton;
 	private JButton rightButton;
 	private JPanel buttonPanel;
@@ -23,6 +27,7 @@ public class MovingLettersFrame extends JFrame {
 	}
 	
 	private void initUI() {
+		LOG.info("UI init started");
 		this.setTitle("Moving Letters");
 		this.setResizable(false);
 		
@@ -35,10 +40,7 @@ public class MovingLettersFrame extends JFrame {
 
 		leftButton.addActionListener(new ActionListener(){
 			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				for (Action i : movingText.getActions()){
-					System.out.println(i);
-				}
+			public void actionPerformed(ActionEvent arg0) {				
 			}
 		});
 		rightButton.addActionListener(new ActionListener(){
@@ -54,5 +56,6 @@ public class MovingLettersFrame extends JFrame {
 		add(buttonPanel);
 		pack();
 		setLocationByPlatform(true);
+		LOG.info("UI init ended");
 	}
 }
